@@ -15,6 +15,11 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
+    @GetMapping("/")
+    public String guide(@RequestParam(value="t") String nom){
+          return String.format("You entered %s", nom);
+    }
+
     @GetMapping("/hello")
     public String hello(@RequestParam(value="name", defaultValue = "World") String name){
         return String.format("Hello %s", name);
@@ -27,7 +32,7 @@ public class DemoApplication {
 
     @PostMapping("/selve/adj")
     public String selveadj(@RequestParam(value="object", defaultValue="sub123") String val){
-        return val;
+        return String.format("You called %s", val);
     }
 
 }

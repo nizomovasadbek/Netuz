@@ -16,8 +16,8 @@ public class DemoApplication {
     }
 
     @GetMapping("/")
-    public String guide(@RequestParam(value="t") String nom){
-          return String.format("You entered %s", nom);
+    public String guide(){
+          return "Hello from Spring Boot Application";
     }
 
     @GetMapping("/hello")
